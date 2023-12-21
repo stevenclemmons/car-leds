@@ -95,10 +95,10 @@ void loop() {
       
     }
 
-    if(accelVoltage < .5f /*volts*/ && !brakePressed && !clutchPressed)
+    if(accelVoltage < 0.3f /*volts*/ && !brakePressed && !clutchPressed)
     {
-      int ledsToLightup = (LED_COUNT * 100) / 30;
-      for(int x = ledsToLightup; x < LED_COUNT; x++)
+      int ledsToLightup = 5;
+      for(int x = LED_COUNT - ledsToLightup; x < LED_COUNT; x++)
       {
         strip.setPixelColor(x, strip.Color(0, 0, 255));
       }
